@@ -4,11 +4,11 @@ import { useAlert } from  'react-alert'
  
 export const UpdateTransaction = () => {
     const alert = useAlert()
-    const { updateTransValue, isUpdate, updateTransactionList, updateFalse } = useContext(GlobalContext) 
+    const { updateTransValue, isUpdate, updateTransactionList, updateFalse }:any = useContext(GlobalContext) 
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
     
-    const onUpdate = e => {
+    const onUpdate = (e: { preventDefault: () => void }) => {
         e.preventDefault();
     
         const updateTrans = {
@@ -31,7 +31,7 @@ export const UpdateTransaction = () => {
            </div>
            <div className="form-control">
            <label> Amount Here </label>
-           <input required className='form-text' type="number"  onChange = {(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
+           <input required className='form-text' type="number"  onChange = {(e) => setAmount(+e.target.value)} placeholder="Enter amount..." />
            </div>
            <button className={ `${amount > 0 ? 'btnSuccess' : 'btnDanger'}` } > Update</button>
            <button className='btnDanger' onClick={() => updateFalse(false) } > Cancel </button>

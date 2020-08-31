@@ -4,12 +4,12 @@ import { useAlert } from 'react-alert'
 
 export const AddTransaction = () => {
   const alert = useAlert()
-  const [text, setText] = useState();
-  const [amount, setAmount] = useState();
+  const [text, setText] = useState('');
+  const [amount, setAmount] = useState(0);
 
-  const { addTransaction, isUpdate } = useContext(GlobalContext);
+  const { addTransaction , isUpdate }:any = useContext(GlobalContext);
 
-  const onSubmit = e => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     e.target.reset()
 
@@ -35,7 +35,7 @@ export const AddTransaction = () => {
             >Amount <br />
             (negative - expense, positive - income)</label
           >
-          <input required type="number" onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
+          <input required type="number" onChange={(e) => setAmount(+e.target.value)} placeholder="Enter amount..." />
         </div>
         <button disabled={ (text === '' && amount === 0) ? true : false} className={ `${amount > 1 && text !== '' ? 'btnSuccess' : 'btnDanger'}` }>{ amount > 1 ?  'Add Income' : 'Add Expanse' }</button>
       </form>

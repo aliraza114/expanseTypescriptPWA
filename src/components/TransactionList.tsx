@@ -9,7 +9,7 @@ export const TransactionList = () => {
     <div>
       <h3>{ transactions.length < 1 ? 'No Transaction History Yet' : '' }</h3>
       <ul className="list">   
-        {transactions.map(transaction => (<Transaction key={transaction.id} transaction={transaction} />))}
+        {transactions.map((transaction: { id: any})  => (<Transaction key={transaction.id} transaction={transaction} />))}
       </ul>
     </div>
   )
