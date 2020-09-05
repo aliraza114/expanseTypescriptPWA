@@ -1,9 +1,7 @@
 import React, {useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
-import { useAlert } from  'react-alert'
  
 export const UpdateTransaction = () => {
-    const alert = useAlert()
     const { updateTransValue, isUpdate, updateTransactionList, updateFalse }:any = useContext(GlobalContext) 
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
@@ -17,7 +15,6 @@ export const UpdateTransaction = () => {
           amount: +amount
         }
         updateTransValue(updateTrans);
-        alert.show('Transaction Updated Successfully') 
       }
 
     return (
@@ -36,6 +33,6 @@ export const UpdateTransaction = () => {
            <button className={ `${amount > 0 ? 'btnSuccess' : 'btnDanger'}` } > Update</button>
            <button className='btnDanger' onClick={() => updateFalse(false) } > Cancel </button>
        </form>
-       </div> : ''
+       </div> : null
     )
 }

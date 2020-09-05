@@ -1,9 +1,7 @@
 import React, {useState, useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState';
-import { useAlert } from 'react-alert'
 
 export const AddTransaction = () => {
-  const alert = useAlert()
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
 
@@ -11,7 +9,7 @@ export const AddTransaction = () => {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    e.target.reset()
+    
 
     const newTransaction = {
       id: new Date(),
@@ -19,7 +17,6 @@ export const AddTransaction = () => {
       amount: +amount
     }
     addTransaction(newTransaction);
-    alert.show('Transaction Added') 
   }
 
   return (
@@ -39,6 +36,6 @@ export const AddTransaction = () => {
         </div>
         <button disabled={ (text === '' && amount === 0) ? true : false} className={ `${amount > 1 && text !== '' ? 'btnSuccess' : 'btnDanger'}` }>{ amount > 1 ?  'Add Income' : 'Add Expanse' }</button>
       </form>
-    </div> : ''
+    </div> : null
   )
 }

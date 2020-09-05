@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import { useAlert } from 'react-alert'
 
 type Props = {
   transaction: any
@@ -8,10 +7,8 @@ type Props = {
 
 export const Transaction: React.FC<Props> = ({ transaction }) => {
   const { isUpdate ,deleteTransaction, updateTransaction }:any= useContext(GlobalContext);
-  const alert = useAlert()
   const deleteTrans = (id:any) => {
     deleteTransaction(id)
-    alert.show('Transaction Deleted Successfully') 
   }
 
   return (
