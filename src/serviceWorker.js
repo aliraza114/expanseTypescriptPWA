@@ -1,11 +1,5 @@
 const CASHE_NAME = 'v-1'
-const urlsToCache = ['index.html',
-'/static/js/2.b8453fb6.chunk.js',
-'/static/js/main.fac0d96c.chunk.js',
-'/static/css/2.11829350.chunk.css',
-'/static/css/main.8ee7fde6.chunk.css',
-'/manifest.json',
-'/logo192.png',
+const urlsToCache = ['index.html'
 ]
 
 const self = this
