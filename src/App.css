@@ -107,7 +107,7 @@ h4 {
   text-align: center;
   padding: 20px;
   color: black;
-  border-radius: 30px 30px 0px 0px;
+  border-radius: 0px 0px 30px 30px !important;
   box-shadow: var(--box-shadow);
 }
 
@@ -169,16 +169,18 @@ input[type='number'] {
 
 .iconEdit {
   color:  rgb(77, 163, 77);
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 800;
   background-color: transparent;
   outline: none;
   border: none !important;
 }
 
-.iconEdit:hover {
+.iconEditMinus {
   color: #c0392b;
-  font-size: 10px;
-  
+  font-size: 14px;
+  font-weight: 800;
+  background-color: transparent;
   outline: none;
   border: none !important;
 }
@@ -295,7 +297,7 @@ input[type='number'] {
     text-align: center;
     padding: 10px;
     color: black;
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 0px 0px 30px 30px !important;
     box-shadow: var(--box-shadow);
   }
 
@@ -439,7 +441,7 @@ h3 {
     padding: 5px;
     color: black;
     font-size: 14px;
-    border-radius: 30px 30px 0px 0px;
+    border-radius: 0px 0px 30px 30px !important;
     box-shadow: var(--box-shadow);
   }
 
